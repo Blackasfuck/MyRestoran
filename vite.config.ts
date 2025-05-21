@@ -4,7 +4,7 @@ import path from 'path';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig(({ mode }) => ({
-  base: '', // Обязательно ./ для относительных путей в HTML
+  base: './', // Обязательно ./ для относительных путей в HTML
   plugins: [
     react(),
     viteStaticCopy({
