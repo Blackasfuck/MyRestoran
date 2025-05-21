@@ -1,11 +1,20 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig(({ mode }) => ({
-  base: '', // <--- если сайт в корне, оставь '/'
+  base: './',
   plugins: [
     react(),
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'css/style.css',
+          dest: 'css'
+        }
+      ]
+    }),
     mode === "development"
       ? {
           name: "inject-chef-dev",
